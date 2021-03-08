@@ -17,8 +17,9 @@ import {
 
 const AuthState = props => {
 
+    // DATOS INICIALES CON LOS CUALES EMPEZAMOS EL ESTADO GLOBAL
     const initialState = {
-        token: localStorage.getItem('token'),
+        token: localStorage.getItem('token'), 
         autenticado: null,
         usuario: null, // información del usuario
         mensaje: null,  // relacionado con las alertas

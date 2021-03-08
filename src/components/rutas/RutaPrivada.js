@@ -8,12 +8,17 @@ const RutaPrivada = ({ component: Component, ...props }) => {
     const authContext = useContext(AuthContext)
     const {autenticado, cargando, usuarioAutenticado } = authContext
 
+    // const ctx = useContext(AuthContext)
+    // ctx.autenticado
+    // ctx.cargando
+
+
     useEffect(() => {
-        usuarioAutenticado()
+        usuarioAutenticado() // INCLUYE LA VERIFICACIÓN DEL USUARIO EN CADA COMPONENTE
     }, [])
 
     return(
-        <Route {...props} render={ props => !autenticado && !cargando ? // ESTE USUARIO ESTÁ AUTENTICADO?
+        <Route {...props} render={ props => !autenticado && !cargando ? // ESTE USUARIO ESTÁ AUTENTICADO ?
             // NO, NO ESTÁ AUTENTICADO
             (
                 <Redirect to="/" />

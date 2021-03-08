@@ -13,15 +13,8 @@ import TareaState from './context/tareas/TareaState'
 import AuthState from './context/autenticacion/AuthState'
 import AlertaState from './context/alertas/AlertaState'
 
-import tokenAuth from './config/token'
 import RutaPrivada from './components/rutas/RutaPrivada'
 
-  // REVISAR SI TENEMOS UN TOKEN
-  const token = localStorage.getItem('token')  
-
-  if(token){
-    tokenAuth(token)
-  }
 
 function App() {
   
@@ -31,6 +24,7 @@ function App() {
       <TareaState>
         <AlertaState>
           <AuthState>
+              
               <Router>
                 <Switch>
                   <Route exact path="/" component={Login} />
@@ -38,6 +32,7 @@ function App() {
                   <RutaPrivada exact path="/proyectos" component={Proyectos} />
                 </Switch>
               </Router>
+
             </AuthState>
           </AlertaState>
       </TareaState>
